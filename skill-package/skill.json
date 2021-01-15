@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:094924172416:function:231c5011-8da9-4f5c-b4b9-26b071b0b8b6:Release_0"
+        },
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:094924172416:function:231c5011-8da9-4f5c-b4b9-26b071b0b8b6:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:094924172416:function:231c5011-8da9-4f5c-b4b9-26b071b0b8b6:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:094924172416:function:231c5011-8da9-4f5c-b4b9-26b071b0b8b6:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Song Match"
+        }
+      }
+    }
+  }
+}
