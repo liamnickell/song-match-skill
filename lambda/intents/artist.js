@@ -20,7 +20,7 @@ const ArtistIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speakOutput)
-      .reprompt(repromptOutput)
+      .reprompt(speakOutput)
       .getResponse(); // return call to AnswerIntentHandler with handlerInput
   }
 };
