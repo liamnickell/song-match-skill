@@ -13,6 +13,8 @@ const ArtistIntentHandler = {
         - set question index to 0
     */
 
+    const { requestEnvelope } = handlerInput;
+
     const artist = Alexa.getSlotValue(requestEnvelope, 'artist');
     const speakOutput = `Triggered artist intent with artist: ${artist}`;
 
