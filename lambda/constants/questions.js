@@ -35,7 +35,7 @@ const Questions = {
       ]
     },
     {
-      'question': `If you were forced to run a fraudulent business, would you rather run a ponzi scheme or pyramid scheme?`,
+      'question': `Do you think you'd be more successful at running a ponzi scheme or pyramid scheme?`,
       'answers': [
         {
           'samples': [
