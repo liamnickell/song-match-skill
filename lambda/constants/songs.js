@@ -37,7 +37,7 @@ const Songs = {
     '000': `Around the World`,
     '001': `One More Time`,
     '010': `Harder, Better, Faster, Stronger`,
-    '011': `Robot Rock`,
+    '011': `Instant Crush`,
     '100': `Lose Yourself to Dance`,
     '101': `Giorgio by Moroder`,
     '110': `Get Lucky`,
