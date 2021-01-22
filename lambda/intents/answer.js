@@ -20,11 +20,25 @@ const AnswerIntentHandler = {
     const sessionAttributes = attributesManager.getSessionAttributes();
 
     const questions = Questions[sessionAttributes.artist];
+    if (sessionAttributes.questionIndex == questions.length) {
+      const speakOutput = `All questions asked! Computing song match...`;
+      return handlerInput.responseBuilder
+        .speak(speakOutput)
+        .reprompt(speakOutput)
+        .getResponse();
+    }
+
     const question = questions[sessionAttributes.questionIndex]['question'];
+    sessionAttributes.questionIndex++;
 
-    const speakOutput = `In answer intent handler... question: ${question}`;
-
+    const speakOutput = 
+      `In answer intent handler... question ${sessionAttributes.questionIndex}: ${question}`;
     return handlerInput.responseBuilder
+      .addElicitSlotDirective('answer', {
+          name: 'AnswerIntent',
+          confirmationStatus: 'NONE',
+          slots: {}
+      })
       .speak(speakOutput)
       .reprompt(speakOutput)
       .getResponse();
