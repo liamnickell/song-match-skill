@@ -1,4 +1,5 @@
 const Alexa = require('ask-sdk-core');
+const AnswerIntentHandler = require('./answer.js');
 
 const ArtistIntentHandler = {
   canHandle(handlerInput) {
@@ -6,22 +7,28 @@ const ArtistIntentHandler = {
       && Alexa.getIntentName(handlerInput.requestEnvelope) === 'ArtistIntent';
   },
   handle(handlerInput) {
-    /* 
-      TODO:
-        - parse for artist name, return asking them for a different artist if none satisfy
-        - add artist name code to session attributes
-        - set question index to 0
-    */
+    const { requestEnvelope, attributesManager } = handlerInput;
+    const sessionAttributes = attributesManager.getSessionAttributes();
 
-    const { requestEnvelope } = handlerInput;
+    // set session attribute for chosen artist
+    const artist = Alexa.getSlotValue(requestEnvelope, 'artist').toLowerCase();
+    if (artist === 'run the jewels') {
+      sessionAttributes.artist = 'runTheJewels';
+    } else if (artist === 'kendrick lamar') {
+      sessionAttributes.artist = 'kendrickLamar';
+    } else if (artist === 'tame impala') {
+      sessionAttributes.artist = 'tameImpala';
+    } else {
+      sessionAttributes.artist = 'daftPunk';
+    }
 
-    const artist = Alexa.getSlotValue(requestEnvelope, 'artist');
-    const speakOutput = `Triggered artist intent with artist: ${artist}`;
+    sessionAttributes.questionIndex = 0;
+    sessionAttributes.currentAnswers = '';
+    sessionAttributes.gameStatus = 'STARTED';
+    attributesManager.setSessionAttributes(sessionAttributes);
 
-    return handlerInput.responseBuilder
-      .speak(speakOutput)
-      .reprompt(speakOutput)
-      .getResponse(); // return call to AnswerIntentHandler with handlerInput
+    // call answer intent handler to immediately ask user the first question
+    return AnswerIntentHandler.handle(handlerInput);
   }
 };
 
