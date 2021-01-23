@@ -57,14 +57,14 @@ const Questions = {
       ]
     },
     {
-      'question': `Do you think you'd be more successful at running a ponzi scheme or pyramid scheme?`,
+      'question': `Do you think you'd be more successful at running a Ponzi scheme or pyramid scheme?`,
       'answers': [
         {
           'id': '0',
           'name': {
-            'value': 'ponzi',
+            'value': 'Ponzi',
             'synonyms': [
-              'ponzi scheme'
+              'Ponzi scheme'
             ]
           }
         },
@@ -301,9 +301,9 @@ const Questions = {
         {
           'id': '0',
           'name': {
-            'value': 'still water',
+            'value': 'still',
             'synonyms': [
-              'still',
+              'still water',
               'regular water',
               'normal water'
             ]
@@ -312,9 +312,9 @@ const Questions = {
         {
           'id': '1',
           'name': {
-            'value': 'sparkling water',
+            'value': 'sparkling',
             'synonyms': [
-              'sparkling',
+              'sparkling water',
               'fizzy water',
               'bubbly water',
               'white noise water'
@@ -329,9 +329,9 @@ const Questions = {
         {
           'id': '0',
           'name': {
-            'value': 'acknowledge my mistake',
+            'value': 'acknowledge',
             'synonyms': [
-              'acknowledge',
+              'acknowledge my mistake',
               'talk my way out of it'
             ]
           }
@@ -341,8 +341,10 @@ const Questions = {
           'name': {
             'value': 'avoid eye contact',
             'synonyms': [
-              'sit silently',
+              'avoid',
+              'ignore',
               'ignore the waiter',
+              'sit silently',
               'wait for them to walk away',
               'sit there awkwardly'
             ]
