@@ -28,19 +28,33 @@ const AnswerIntentHandler = {
         .getResponse();
     }
 
-    const question = questions[sessionAttributes.questionIndex]['question'];
+    const questionObject = questions[sessionAttributes.questionIndex]
+    const question = questionObject['question'];
     sessionAttributes.questionIndex++;
+    // TODO: explicitly set session attributes
+
+    const dynamicEntitiesDirective = {
+      type: 'Dialog.UpdateDynamicEntities',
+      updateBehavior: 'REPLACE',
+      types: [
+        {
+          name: 'Answer',
+          values: questionObject['answers']
+        }
+      ]
+    };
 
     const speakOutput = 
       `In answer intent handler... question ${sessionAttributes.questionIndex}: ${question}`;
     return handlerInput.responseBuilder
-      .addElicitSlotDirective('answer', {
-          name: 'AnswerIntent',
-          confirmationStatus: 'NONE',
-          slots: {}
+      .addDelegateDirective({
+        name: 'AnswerIntent',
+        confirmationStatus: 'NONE',
+        slots: {}
       })
       .speak(speakOutput)
       .reprompt(speakOutput)
+      .addDirective(dynamicEntitiesDirective)
       .getResponse();
   }
 };
