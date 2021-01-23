@@ -40,14 +40,14 @@ const AnswerIntentHandler = {
     };
 
     let affirmation = 'Ok';
-    if (questionIndex == 1) {
+    if (questionIndex == 0) {
       affirmation = 'Great';
-    } else if (questionIndex == questions.length) {
+    } else if (questionIndex == questions.length - 1) {
       affirmation = 'Lastly';
     }
 
     const speakOutput = 
-      `${affirmation}, question ${questionIndex + 1}: ${question}`;
+      `${affirmation}. Question ${questionIndex + 1}: ${question}`;
     return handlerInput.responseBuilder
       .addDirective(dynamicEntitiesDirective)
       .speak(speakOutput)

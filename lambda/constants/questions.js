@@ -74,7 +74,7 @@ const Questions = {
             'value': 'pyramid',
             'synonyms': [
               'pyramid scheme',
-              'multi-level marketing'
+              'multi level marketing'
             ]
           }
         }
