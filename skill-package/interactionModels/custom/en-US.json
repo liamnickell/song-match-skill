@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "change me",
+      "invocationName": "song match",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -16,25 +16,166 @@
           "samples": []
         },
         {
-          "name": "HelloWorldIntent",
-          "slots": [],
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.RepeatIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "ArtistIntent",
+          "slots": [
+            {
+              "name": "artist",
+              "type": "ArtistSlotType"
+            }
+          ],
           "samples": [
-            "hello",
-            "how are you",
-            "say hi world",
-            "say hi",
-            "hi",
-            "say hello world",
-            "say hello"
+            "{artist}",
+            "My favorite artist is {artist}"
           ]
         },
         {
-          "name": "AMAZON.NavigateHomeIntent",
-          "samples": []
+          "name": "AnswerIntent",
+          "slots": [
+            {
+              "name": "answer",
+              "type": "AnswerSlotType"
+            }
+          ],
+          "samples": [
+            "I would prefer to {answer}",
+            "I would rather {answer}",
+            "I am {answer}",
+            "I would {answer}",
+            "{answer}"
+          ]
         }
       ],
-      "types": []
-    }
-  },
-  "version": "1"
+      "types": [
+        {
+          "name": "AnswerSlotType",
+          "values": [
+            {
+              "name": {
+                "value": "floor it"
+              }
+            },
+            {
+              "name": {
+                "value": "slam the brakes"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ArtistSlotType",
+          "values": [
+            {
+              "name": {
+                "value": "tame impala"
+              }
+            },
+            {
+              "name": {
+                "value": "kendrick lamar",
+                "synonyms": [
+                  "k dot"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "daft punk"
+              }
+            },
+            {
+              "name": {
+                "value": "run the jewels",
+                "synonyms": [
+                  "jewel runners",
+                  "rtj"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "ArtistIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "artist",
+              "type": "ArtistSlotType",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {},
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.1608433251783.1103222260690.883901430105"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "AnswerIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "answer",
+              "type": "AnswerSlotType",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.558951577448.455697749338"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1090825344186.892880274709",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Who's your favorite artist?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.558951577448.455697749338",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sorry, I didn't get that. What's your answer to the question?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.1608433251783.1103222260690.883901430105",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Sorry, I don't support song matching for that artist. The artists I do support are Run the Jewels, Kendrick Lamar, Tame Impala, and Daft Punk. Try saying one of those artists."
+          }
+        ]
+      }
+    ]
+  }
 }
