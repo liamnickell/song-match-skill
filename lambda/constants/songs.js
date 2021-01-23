@@ -34,14 +34,18 @@ const Songs = {
     '111': `Posthumous Forgiveness`
   ],
   'daftPunk': [
-    '000': `Around the World`,
-    '001': `One More Time`,
+    '000': `Lose Yourself to Dance`,
+    '001': `Giorgio by Moroder`,
     '010': `Harder, Better, Faster, Stronger`,
     '011': `Instant Crush`,
-    '100': `Lose Yourself to Dance`,
-    '101': `Giorgio by Moroder`,
-    '110': `Get Lucky`,
-    '111': `Doin' It Right`
+    '100': `Around the World`,
+    '101': `Doin' It Right`,
+    '110': `Steam Machine`,
+    '111': `Robot Rock`,
+    '200': `Beyond`,
+    '201': `Get Lucky`,
+    '210': `Crescendolls`,
+    '211': `One More Time`
   ]
 };
 

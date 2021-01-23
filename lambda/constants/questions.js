@@ -4,14 +4,24 @@ const Questions = {
       'question': `Which scenery do you prefer: mountains or coasts?`,
       'answers': [
         {
-          'samples': [
-            'mountain'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'mountains',
+            'synonyms': []
+          }
         },
         {
-          'samples': [
-            'coast'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'coasts',
+            'synonyms': [
+              'coastlines',
+              'shores',
+              'shorelines',
+              'beaches',
+              'ocean'
+            ]
+          }
         }
       ]
     },
@@ -19,18 +29,30 @@ const Questions = {
       'question': `You're speeding down the highway at 100 miles per hour when you suddenly spot a cop. Do you slam the brakes or floor it?`,
       'answers': [
         {
-          'samples': [
-            'brake',
-            'stop',
-            'slow'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'brake',
+            'synonyms': [
+              'slam the brakes',
+              'hit the brakes',
+              'stop the car',
+              'pull over',
+              'slow down'
+            ]
+          }
         },
         {
-          'samples': [
-            'floor',
-            'accelerate',
-            'speed'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'floor it',
+            'synonyms': [
+              'speed up',
+              'accelerate',
+              'run',
+              'get away',
+              'escape'
+            ]
+          }
         }
       ]
     },
@@ -38,14 +60,23 @@ const Questions = {
       'question': `Do you think you'd be more successful at running a ponzi scheme or pyramid scheme?`,
       'answers': [
         {
-          'samples': [
-            'ponzi'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'ponzi',
+            'synonyms': [
+              'ponzi scheme'
+            ]
+          }
         },
         {
-          'samples': [
-            'pyramid'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'pyramid',
+            'synonyms': [
+              'pyramid scheme',
+              'multi-level marketing'
+            ]
+          }
         }
       ]
     }
@@ -55,19 +86,31 @@ const Questions = {
       'question': `If you had to choose, would you rather have chocolate, vanilla, or coffee ice cream?`,
       'answers': [
         {
-          'samples': [
-            'chocolate'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'chocolate',
+            'synonyms': [
+              'chocolate ice cream'
+            ]
+          }
         },
         {
-          'samples': [
-            'vanilla'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'vanilla',
+            'synonyms': [
+              'vanilla ice cream'
+            ]
+          }
         },
         {
-          'samples': [
-            'coffee'
-          ]
+          'id': '2',
+          'name': {
+            'value': 'coffee',
+            'synonyms': [
+              'coffee ice cream'
+            ]
+          }
         }
       ]
     },
@@ -75,14 +118,30 @@ const Questions = {
       'question': `Yes or no: do you think we live in a simulation?`,
       'answers': [
         {
-          'samples': [
-            'yes'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'yes',
+            'synonyms': [
+              'yeah',
+              'definitely',
+              'of course',
+              'of course we do',
+              'yep',
+              'hell yeah',
+              'hell yes'
+            ]
+          }
         },
         {
-          'samples': [
-            'no'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'no',
+            'synonyms': [
+              'no way',
+              'definitely not',
+              'hell no'
+            ]
+          }
         }
       ]
     },
@@ -90,16 +149,27 @@ const Questions = {
       'question': `There's a bowl of freshly baked cookies in front of you and you're starving, but it's almost time for dinner. Do you eat a cookie or wait till after dinner?`,
       'answers': [
         {
-          'samples': [
-            'eat',
-            'now'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'eat a cookie',
+            'synonyms': [
+              'eat the cookies',
+              'eat the cookies now',
+              'I will not wait'
+            ]
+          }
         },
         {
-          'samples': [
-            'wait',
-            'after'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'wait until after dinner',
+            'synonyms': [
+              'eat a cookie after dinner',
+              'eat dinner first',
+              'resist the temptation',
+              'I hate cookies'
+            ]
+          }
         }
       ]
     }
@@ -109,14 +179,30 @@ const Questions = {
       'question': `Yes or no: do you consider yourself a night owl?`,
       'answers': [
         {
-          'samples': [
-            'yes'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'yes',
+            'synonyms': [
+              'yeah',
+              'definitely',
+              'of course',
+              'of course we do',
+              'yep',
+              'hell yeah',
+              'hell yes'
+            ]
+          }
         },
         {
-          'samples': [
-            'no'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'no',
+            'synonyms': [
+              'no way',
+              'definitely not',
+              'hell no'
+            ]
+          }
         }
       ]
     },
@@ -124,14 +210,22 @@ const Questions = {
       'question': `Would you rather have the power to control electricity or water?`,
       'answers': [
         {
-          'samples': [
-            'electricity'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'electricity',
+            'synonyms': [
+              'control electricity'
+            ]
+          }
         },
         {
-          'samples': [
-            'water'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'water',
+            'synonyms': [
+              'control water'
+            ]
+          }
         }
       ]
     },
@@ -139,17 +233,26 @@ const Questions = {
       'question': `You're in an important business meeting and very hungry. Would you rather eat an extra large pizza or saucepan full of spaghetti in front of everyone?`,
       'answers': [
         {
-          'samples': [
-            'pizza',
-            'extra large'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'pizza',
+            'synonyms': [
+              'extra large pizza',
+              'extra large'
+            ]
+          }
         },
         {
-          'samples': [
-            'spaghetti',
-            'pasta',
-            'saucepan'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'spaghetti',
+            'synonyms': [
+              'pasta',
+              'saucepan of spaghetti',
+              'saucepan',
+              'saucepan of pasta'
+            ]
+          }
         }
       ]
     }
@@ -159,21 +262,36 @@ const Questions = {
       'question': `Assuming price isn't a factor, do you prefer Mac, Windows, or Linux?`,
       'answers': [
         {
-          'samples': [
-            'mac',
-            'apple'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'Mac',
+            'synonyms': [
+              'Apple',
+              'MacOS'
+            ]
+          }
         },
         {
-          'samples': [
-            'windows',
-            'pc'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'Windows',
+            'synonyms': [
+              'PC',
+              'Microsoft'
+            ]
+          }
         },
         {
-          'samples': [
-            'linux'
-          ]
+          'id': '2',
+          'name': {
+            'value': 'Linux',
+            'synonyms': [
+              'Ubuntu',
+              'Debian',
+              'Arch Linux',
+              'Fedora'
+            ]
+          }
         }
       ]
     },
@@ -181,14 +299,27 @@ const Questions = {
       'question': `Assuming you aren't in dire need of hydration, would you rather drink still or sparkling water?`,
       'answers': [
         {
-          'samples': [
-            'still'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'still water',
+            'synonyms': [
+              'still',
+              'regular water',
+              'normal water'
+            ]
+          }
         },
         {
-          'samples': [
-            'sparkling'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'sparkling water',
+            'synonyms': [
+              'sparkling',
+              'fizzy water',
+              'bubbly water',
+              'white noise water'
+            ]
+          }
         }
       ]
     },
@@ -196,17 +327,26 @@ const Questions = {
       'question': `A waiter tells you to enjoy your meal and you accidentally reply with "you too." Do you acknowledge your mistake or avoid eye contact?`,
       'answers': [
         {
-          'samples': [
-            'acknowledge',
-            'mistake'
-          ]
+          'id': '0',
+          'name': {
+            'value': 'acknowledge my mistake',
+            'synonyms': [
+              'acknowledge',
+              'talk my way out of it'
+            ]
+          }
         },
         {
-          'samples': [
-            'avoid',
-            'eye contact',
-            'ignore'
-          ]
+          'id': '1',
+          'name': {
+            'value': 'avoid eye contact',
+            'synonyms': [
+              'sit silently',
+              'ignore the waiter',
+              'wait for them to walk away',
+              'sit there awkwardly'
+            ]
+          }
         }
       ]
     }
