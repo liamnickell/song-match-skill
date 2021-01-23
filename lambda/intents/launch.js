@@ -11,7 +11,7 @@ const LaunchRequestHandler = {
       `Welcome to Song Match. I can help you understand which song by your favorite 
       artist best matches your life. Who's your favorite artist?`;
     return handlerInput.responseBuilder
-      .addDelegateDirective({
+      .addElicitSlotDirective('artist', {
         name: 'ArtistIntent',
         confirmationStatus: 'NONE',
         slots: {}

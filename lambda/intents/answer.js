@@ -47,11 +47,11 @@ const AnswerIntentHandler = {
     const speakOutput = 
       `In answer intent handler... question ${sessionAttributes.questionIndex}: ${question}`;
     return handlerInput.responseBuilder
-      .addElicitSlotDirective('answer', {
-        name: 'AnswerIntent',
-        confirmationStatus: 'NONE',
-        slots: {}
-      })
+      // .addElicitSlotDirective('answer', {
+      //   name: 'AnswerIntent',
+      //   confirmationStatus: 'NONE',
+      //   slots: {}
+      // })
       .addDirective(dynamicEntitiesDirective)
       .speak(speakOutput)
       .reprompt(speakOutput)
