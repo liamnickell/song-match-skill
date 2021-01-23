@@ -20,7 +20,7 @@ const RepeatQuestionIntentHandler = {
         .getResponse();
     }
 
-    const { question } = Questions[artist][questionIndex];
+    const { question } = Questions[artist][questionIndex - 1];
     return handlerInput.responseBuilder
       .speak(question)
       .reprompt(question)

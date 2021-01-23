@@ -10,7 +10,8 @@ const HelpIntentHandler = {
       `This is Song Match. If you tell me your favorite music artist and answer some
       questions, I can tell you which song by that artist best matches your life.`;
     const repromptOutput = 
-      `Tell me your favorite music artist to start the Song Match quiz.`;
+      `Tell me your favorite music artist to start the Song Match quiz or ask me to
+      repeat the question if you're in a quiz and forgot.`;
 
     return handlerInput.responseBuilder
       .speak(speakOutput)

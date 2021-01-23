@@ -46,7 +46,8 @@ const AnswerIntentHandler = {
       affirmation = 'Lastly';
     }
 
-    const speakOutput = `${affirmation}, question ${questionIndex}: ${question}`;
+    const speakOutput = 
+      `${affirmation}, question ${questionIndex + 1}: ${question}`;
     return handlerInput.responseBuilder
       .addDirective(dynamicEntitiesDirective)
       .speak(speakOutput)
