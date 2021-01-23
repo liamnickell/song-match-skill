@@ -29,7 +29,7 @@ const AnswerIntentHandler = {
     }
 
     const questionObject = questions[sessionAttributes.questionIndex]
-    const question = questionObject['question'];
+    const question = questionObject.question;
     sessionAttributes.questionIndex++;
     // TODO: explicitly set session attributes
 
@@ -38,8 +38,8 @@ const AnswerIntentHandler = {
       updateBehavior: 'REPLACE',
       types: [
         {
-          name: 'Answer',
-          values: questionObject['answers']
+          name: 'AnswerSlotType',
+          values: questionObject.answers
         }
       ]
     };
@@ -47,14 +47,14 @@ const AnswerIntentHandler = {
     const speakOutput = 
       `In answer intent handler... question ${sessionAttributes.questionIndex}: ${question}`;
     return handlerInput.responseBuilder
-      .addDelegateDirective({
+      .addElicitSlotDirective('answer', {
         name: 'AnswerIntent',
         confirmationStatus: 'NONE',
         slots: {}
       })
+      .addDirective(dynamicEntitiesDirective)
       .speak(speakOutput)
       .reprompt(speakOutput)
-      .addDirective(dynamicEntitiesDirective)
       .getResponse();
   }
 };
