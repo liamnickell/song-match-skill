@@ -7,6 +7,7 @@ const HelpIntentHandler = require('./intents/help.js');
 const RepeatIntentHandler = require('./intents/repeat.js');
 const ArtistIntentHandler = require('./intents/artist.js');
 const AnswerIntentHandler = require('./intents/answer.js');
+const RepeatQuestionIntentHandler = require('./intents/repeat-question.js');
 const FallbackHandler = require('./intents/fallback.js');
 const IntentReflectorHandler = require('./intents/reflector.js');
 const SaveResponseInterceptor = require('./interceptors/save-response.js');
@@ -23,6 +24,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     RepeatIntentHandler,
     ArtistIntentHandler,
     AnswerIntentHandler,
+    RepeatQuestionIntentHandler,
     FallbackHandler,
     IntentReflectorHandler,
   )
