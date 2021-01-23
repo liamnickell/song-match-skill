@@ -9,18 +9,13 @@ const AnswerIntentHandler = {
       && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AnswerIntent';
   },
   handle(handlerInput) {
-    /* 
-      TODO:
-        - append answer index to sessionAttributes
-        - use question index in sessionAttributes to determine next question
-        - if no more questions left, determine song match
-        - delegate to continue intent handler
-    */
     const { requestEnvelope, attributesManager } = handlerInput;
     const sessionAttributes = attributesManager.getSessionAttributes();
+    const { artist, questionIndex } = sessionAttributes;
 
-    const questions = Questions[sessionAttributes.artist];
-    if (sessionAttributes.questionIndex == questions.length) {
+    // compute song match from previous answers
+    const questions = Questions[artist];
+    if (questionIndex == questions.length) {
       const speakOutput = `All questions asked! Computing song match...`;
       return handlerInput.responseBuilder
         .speak(speakOutput)
@@ -28,7 +23,7 @@ const AnswerIntentHandler = {
         .getResponse();
     }
 
-    const questionObject = questions[sessionAttributes.questionIndex]
+    const questionObject = questions[questionIndex];
     const question = questionObject.question;
     sessionAttributes.questionIndex++;
     // TODO: explicitly set session attributes
@@ -44,14 +39,15 @@ const AnswerIntentHandler = {
       ]
     };
 
-    const speakOutput = 
-      `In answer intent handler... question ${sessionAttributes.questionIndex}: ${question}`;
+    let affirmation = 'Ok';
+    if (questionIndex == 1) {
+      affirmation = 'Great';
+    } else if (questionIndex == questions.length) {
+      affirmation = 'Lastly';
+    }
+
+    const speakOutput = `${affirmation}, question ${questionIndex}: ${question}`;
     return handlerInput.responseBuilder
-      // .addElicitSlotDirective('answer', {
-      //   name: 'AnswerIntent',
-      //   confirmationStatus: 'NONE',
-      //   slots: {}
-      // })
       .addDirective(dynamicEntitiesDirective)
       .speak(speakOutput)
       .reprompt(speakOutput)
