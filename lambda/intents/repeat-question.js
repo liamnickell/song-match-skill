@@ -12,7 +12,7 @@ const RepeatQuestionIntentHandler = {
     const sessionAttributes = attributesManager.getSessionAttributes();
     const { gameStatus, artist, questionIndex } = sessionAttributes;
 
-    if (!(gameStatus || gameStatus === 'STARTED')) {
+    if (!(gameStatus && gameStatus === 'STARTED')) {
       return RepeatIntentHandler.handle(handlerInput);
     }
 
