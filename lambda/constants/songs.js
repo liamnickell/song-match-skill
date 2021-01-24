@@ -9,7 +9,7 @@ const Songs = {
     '110': `Oh My Darling Don't Cry`,
     '111': `Blockbuster Night, Pt. 1`
   },
-  'kendrickLamar': [
+  'kendrickLamar': {
     '000': `Good Kid`,
     '001': `M.A.A.D City`,
     '010': `Swimming Pools (Drank)`,
@@ -22,8 +22,8 @@ const Songs = {
     '201': `Element`,
     '210': `Humble`,
     '211': `Fear`
-  ],
-  'tameImpala': [
+  },
+  'tameImpala': {
     '000': `Alter Ego`,
     '001': `Mind Mischief`,
     '010': `Feels Like We Only Go Backwards`,
@@ -32,8 +32,8 @@ const Songs = {
     '101': `The Less I Know the Better`,
     '110': `Borderline`,
     '111': `Posthumous Forgiveness`
-  ],
-  'daftPunk': [
+  },
+  'daftPunk': {
     '000': `Lose Yourself to Dance`,
     '001': `Giorgio by Moroder`,
     '010': `Harder, Better, Faster, Stronger`,
@@ -46,7 +46,7 @@ const Songs = {
     '201': `Get Lucky`,
     '210': `Crescendolls`,
     '211': `One More Time`
-  ]
+  }
 };
 
 module.exports = Songs;
