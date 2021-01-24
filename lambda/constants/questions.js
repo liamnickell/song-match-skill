@@ -50,7 +50,10 @@ const Questions = {
               'accelerate',
               'run',
               'get away',
-              'escape'
+              'escape',
+              'punch it',
+              'floor it baby',
+              'skirt skirt baby we outta here'
             ]
           }
         }
