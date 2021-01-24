@@ -1,4 +1,5 @@
 const Alexa = require('ask-sdk-core');
+const RepeatIntentHandler = require('./repeat.js');
 const Questions = require('../constants/questions.js');
 
 const RepeatQuestionIntentHandler = {
@@ -12,12 +13,7 @@ const RepeatQuestionIntentHandler = {
     const { gameStatus, artist, questionIndex } = sessionAttributes;
 
     if (!(gameStatus || gameStatus === 'STARTED')) {
-      const speakOutput = 
-        `No quiz questions have been asked yet! Try asking for help.`;
-      return handlerInput.responseBuilder
-        .speak(speakOutput)
-        .reprompt(speakOutput)
-        .getResponse();
+      return RepeatIntentHandler.handle(handlerInput);
     }
 
     const { question } = Questions[artist][questionIndex - 1];
