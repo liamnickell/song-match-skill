@@ -5,7 +5,10 @@ const LaunchRequestHandler = {
     return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
   },
   handle(handlerInput) {
-    // TODO: set gameStatus session attribute to LAUNCHED
+    const { attributesManager } = handlerInput;
+    const sessionAttributes = attributesManager.getSessionAttributes();
+    sessionAttributes.gameStatus = 'LAUNCHED';
+    attributesManager.setSessionAttributes(sessionAttributes);
 
     const speakOutput = 
       `Welcome to Song Match. I can help you understand which song by your favorite 

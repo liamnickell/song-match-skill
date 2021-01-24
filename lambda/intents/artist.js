@@ -23,7 +23,7 @@ const ArtistIntentHandler = {
     }
 
     sessionAttributes.questionIndex = 0;
-    sessionAttributes.currentAnswers = '';
+    sessionAttributes.userAnswers = '';
     sessionAttributes.gameStatus = 'STARTED';
     attributesManager.setSessionAttributes(sessionAttributes);
 
