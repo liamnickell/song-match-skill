@@ -19,17 +19,19 @@ const AnswerIntentHandler = {
     const { artist, questionIndex } = sessionAttributes;
 
     // confirm user answer is valid and add it to their current answers string
-    const answerID = getAnswerID(requestEnvelope);
-    if (answerID) {
-      sessionAttributes.userAnswers += answerID;
-    } else {
-      const speakOutput = 
-        `Sorry, I didn't understand your answer. Try saying it more clearly 
-        or ask me to repeat the question if you forgot.`;
-      return handlerInput.responseBuilder
-        .speak(speakOutput)
-        .reprompt(speakOutput)
-        .getResponse();
+    if (questionIndex !== 0) {
+      const answerID = getAnswerID(requestEnvelope);
+      if (answerID) {
+        sessionAttributes.userAnswers += answerID;
+      } else {
+        const speakOutput = 
+          `Sorry, I didn't understand your answer. Try saying it more clearly 
+          or ask me to repeat the question if you forgot.`;
+        return handlerInput.responseBuilder
+          .speak(speakOutput)
+          .reprompt(speakOutput)
+          .getResponse();
+      }
     }
 
     // compute song match from previous answers
