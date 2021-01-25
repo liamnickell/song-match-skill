@@ -12,6 +12,7 @@ const RepeatQuestionIntentHandler = {
     const sessionAttributes = attributesManager.getSessionAttributes();
     const { gameStatus, artist, questionIndex } = sessionAttributes;
 
+    // if not in a quiz, treat this as a normal request intent request
     if (!(gameStatus && gameStatus === 'STARTED')) {
       return RepeatIntentHandler.handle(handlerInput);
     }

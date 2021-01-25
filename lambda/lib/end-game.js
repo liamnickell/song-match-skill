@@ -1,3 +1,7 @@
+/* 
+  Determines if the user wants to play again and starts a new game if so,
+  otherwise the skill session ends.
+*/
 const handleEndGame = function(handlerInput, answerID) {
   const { attributesManager } = handlerInput;
   const sessionAttributes = attributesManager.getSessionAttributes();

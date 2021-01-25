@@ -8,7 +8,6 @@ const NewSessionHandler = {
   handle(handlerInput) {
     const speakOutput = 
       `Sorry, I can't help with that. Say "open Song Match" if you want to play.`;
-
     return handlerInput.responseBuilder
       .speak(speakOutput)
       .withShouldEndSession(true)

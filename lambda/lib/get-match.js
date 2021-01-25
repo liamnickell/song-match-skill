@@ -1,6 +1,7 @@
 const Songs = require('../constants/songs.js');
 const yesNoEntities = require('../constants/yes-no.js');
 
+// Compute song match from user's answers and ask user if they want to play again.
 const getSongMatch = function(handlerInput) {
   const { attributesManager } = handlerInput;
   const sessionAttributes = attributesManager.getSessionAttributes();
