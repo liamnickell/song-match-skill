@@ -7,7 +7,9 @@ const Questions = {
           'id': '0',
           'name': {
             'value': 'mountains',
-            'synonyms': []
+            'synonyms': [
+              'mountain'
+            ]
           }
         },
         {
@@ -15,9 +17,14 @@ const Questions = {
           'name': {
             'value': 'coasts',
             'synonyms': [
+              'coast',
+              'coastline',
               'coastlines',
+              'shore',
               'shores',
+              'shoreline',
               'shorelines',
+              'beach',
               'beaches',
               'ocean'
             ]
@@ -33,7 +40,9 @@ const Questions = {
           'name': {
             'value': 'brake',
             'synonyms': [
+              'slam the brake',
               'slam the brakes',
+              'hit the brake',
               'hit the brakes',
               'stop the car',
               'pull over',
@@ -111,7 +120,9 @@ const Questions = {
           'name': {
             'value': 'coffee',
             'synonyms': [
-              'coffee ice cream'
+              'coffee ice cream',
+              'espresso',
+              'espresso ice cream'
             ]
           }
         }
@@ -156,6 +167,7 @@ const Questions = {
           'name': {
             'value': 'eat a cookie',
             'synonyms': [
+              'eat the cookie',
               'eat the cookies',
               'eat the cookies now',
               'I will not wait'
@@ -167,7 +179,10 @@ const Questions = {
           'name': {
             'value': 'wait until after dinner',
             'synonyms': [
+              'wait till after dinner',
               'eat a cookie after dinner',
+              'eat the cookie after dinner',
+              'eat the cookies after dinner',
               'eat dinner first',
               'resist the temptation',
               'I hate cookies'
@@ -241,7 +256,11 @@ const Questions = {
             'value': 'pizza',
             'synonyms': [
               'extra large pizza',
-              'extra large'
+              'extra large',
+              'big pizza',
+              'tasty pizza',
+              'greasy pizza',
+              'big greasy pizza'
             ]
           }
         },
@@ -253,7 +272,11 @@ const Questions = {
               'pasta',
               'saucepan of spaghetti',
               'saucepan',
-              'saucepan of pasta'
+              'saucepan of pasta',
+              'bowl of spaghetti',
+              'bowl of pasta',
+              'yummy spaghetti',
+              'spaghetti and meatballs'
             ]
           }
         }
@@ -270,7 +293,8 @@ const Questions = {
             'value': 'Mac',
             'synonyms': [
               'Apple',
-              'MacOS'
+              'MacOS',
+              'Mac OS',
             ]
           }
         },
@@ -280,6 +304,7 @@ const Questions = {
             'value': 'Windows',
             'synonyms': [
               'PC',
+              'p. c.',
               'Microsoft'
             ]
           }
@@ -335,21 +360,25 @@ const Questions = {
             'value': 'acknowledge',
             'synonyms': [
               'acknowledge my mistake',
-              'talk my way out of it'
+              'talk my way out of it',
+              'awkwardly acknowledge',
+              'awkwardly acknowledge my mistake',
+              'awkwardly laugh'
             ]
           }
         },
         {
           'id': '1',
           'name': {
-            'value': 'avoid eye contact',
+            'value': 'avoid',
             'synonyms': [
-              'avoid',
+              'avoid eye contact',
               'ignore',
               'ignore the waiter',
               'sit silently',
               'wait for them to walk away',
-              'sit there awkwardly'
+              'sit there awkwardly',
+              'silently cringe'
             ]
           }
         }

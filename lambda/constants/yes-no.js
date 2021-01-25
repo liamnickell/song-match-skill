@@ -17,7 +17,8 @@ const yesNoEntities = [
         'for sure',
         'yep',
         'hell yeah',
-        'hell yes'
+        'hell yes',
+        'yes please'
       ]
     }
   },
