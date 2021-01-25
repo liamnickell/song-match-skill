@@ -55,6 +55,19 @@
             "I would {answer}",
             "{answer}"
           ]
+        },
+        {
+          "name": "RepeatQuestionIntent",
+          "slots": [],
+          "samples": [
+            "I forgot what question we're on",
+            "What is the question",
+            "What question are we on",
+            "What was the question",
+            "Say the question again",
+            "I forgot the question",
+            "Repeat the question"
+          ]
         }
       ],
       "types": [
@@ -62,11 +75,13 @@
           "name": "AnswerSlotType",
           "values": [
             {
+              "id": "1",
               "name": {
                 "value": "floor it"
               }
             },
             {
+              "id": "0",
               "name": {
                 "value": "slam the brakes"
               }
