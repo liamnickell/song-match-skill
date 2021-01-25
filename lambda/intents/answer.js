@@ -1,6 +1,7 @@
 const Alexa = require('ask-sdk-core');
 const Questions = require('../constants/questions.js');
 const getAnswerID = require('../lib/get-answer.js');
+const updateDynamicEntities = require('../lib/dynamic-entities.js');
 const getSongMatch = require('../lib/get-match.js');
 const handleEndGame = require('../lib/end-game.js');
 
@@ -48,16 +49,8 @@ const AnswerIntentHandler = {
 
     // update answer slot with possible answers for current question
     const questionObject = questions[questionIndex];
-    const dynamicEntitiesDirective = {
-      type: 'Dialog.UpdateDynamicEntities',
-      updateBehavior: 'REPLACE',
-      types: [
-        {
-          name: 'AnswerSlotType',
-          values: questionObject.answers
-        }
-      ]
-    };
+    const dynamicEntitiesDirective = 
+      updateDynamicEntities('AnswerSlotType', questionObject.answers);
 
     let affirmation = 'Ok';
     if (questionIndex === 0) {

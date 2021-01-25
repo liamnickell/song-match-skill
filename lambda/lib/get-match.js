@@ -1,4 +1,5 @@
 const Songs = require('../constants/songs.js');
+const updateDynamicEntities = require('../lib/dynamic-entities.js');
 const yesNoEntities = require('../constants/yes-no.js');
 
 // Compute song match from user's answers and ask user if they want to play again.
@@ -11,16 +12,8 @@ const getSongMatch = function(handlerInput) {
   attributesManager.setSessionAttributes(sessionAttributes);
 
   // update answer slot so user can indicate whether they want to continue
-  const dynamicEntitiesDirective = {
-    type: 'Dialog.UpdateDynamicEntities',
-    updateBehavior: 'REPLACE',
-    types: [
-      {
-        name: 'AnswerSlotType',
-        values: yesNoEntities
-      }
-    ]
-  };
+  const dynamicEntitiesDirective = 
+    updateDynamicEntities('AnswerSlotType', yesNoEntities);
 
   const songMatch = Songs[artist][userAnswers];
   const speakOutput = 
