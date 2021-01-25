@@ -24,7 +24,7 @@ const getSongMatch = function(handlerInput) {
 
   const songMatch = Songs[artist][userAnswers];
   const speakOutput = 
-    `Based on your answers, your ${artistName} Song Match is “${songMatch}”.
+    `Based on your answers, your ${artistName} Song Match is “${songMatch}.”
     Would you like to get another Song Match with a different artist?`;
   return handlerInput.responseBuilder
     .addDirective(dynamicEntitiesDirective)

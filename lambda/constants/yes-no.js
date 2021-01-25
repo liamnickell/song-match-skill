@@ -30,6 +30,7 @@ const yesNoEntities = [
         'no way',
         'definitely not',
         'no thank you',
+        'no thanks',
         'hell no'
       ]
     }
