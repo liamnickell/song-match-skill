@@ -1,5 +1,11 @@
 const handleEndGame = function(handlerInput, answerID) {
+  const { attributesManager } = handlerInput;
+  const sessionAttributes = attributesManager.getSessionAttributes();
+
   if (answerID === 'YES') {
+    sessionAttributes.gameStatus = 'LAUNCHED';
+    attributesManager.setSessionAttributes(sessionAttributes);
+
     const speakOutput = 
       `Ok, great! Which artist would you like to get a Song Match with?`;
     const repromptOutput = 
@@ -16,8 +22,8 @@ const handleEndGame = function(handlerInput, answerID) {
   }
   
   const speakOutput = 
-    `Ok, thank you for using Song Match. For another great skill, 
-    check out Song Quiz!`;
+    `Ok, thank you for using Song Match. For another great skill, check 
+    out Song Quiz!`;
   return handlerInput.responseBuilder
     .speak(speakOutput)
     .withShouldEndSession(true)
