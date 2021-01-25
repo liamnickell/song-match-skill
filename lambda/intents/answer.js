@@ -17,7 +17,7 @@ const AnswerIntentHandler = {
   handle(handlerInput) {
     const { requestEnvelope, attributesManager } = handlerInput;
     const sessionAttributes = attributesManager.getSessionAttributes();
-    const { artist, questionIndex, artistName } = sessionAttributes;
+    const { artist, questionIndex, artistName, gameStatus } = sessionAttributes;
 
     // confirm user answer is valid and add it to their current answers string
     if (questionIndex !== 0) {
